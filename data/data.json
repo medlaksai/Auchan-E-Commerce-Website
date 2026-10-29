@@ -1,0 +1,152 @@
+ [
+    {
+      "id": 1,
+      "image" :"" ,
+      "nom": "T-shirt en coton",
+      "categorie": "Vêtements",
+      "description": "T-shirt confortable en coton",
+      "prix_mad": 99.00,
+      "stock": 50,
+      "marque": "BasicWear"
+    },
+    {
+      "id": 2,
+      "image" :"" ,
+      "nom": "Jean slim",
+      "categorie": "Vêtements",
+      "description": "Jean slim en denim bleu",
+      "prix_mad": 249.00,
+      "stock": 30,
+      "marque": "UrbanStyle"
+    },
+    {
+      "id": 3,
+      "image" :"" ,
+      "nom": "Veste en cuir",
+      "categorie": "Vêtements",
+      "description": "Veste élégante en simili cuir",
+      "prix_mad": 499.00,
+      "stock": 15,
+      "marque": "FashionPro"
+    },
+    {
+      "id": 4,
+      "image" :"" ,
+      "nom": "Robe d'été",
+      "categorie": "Vêtements",
+      "description": "Robe légère à motifs floraux",
+      "prix_mad": 199.00,
+      "stock": 25,
+      "marque": "BelleMode"
+    },
+    {
+      "id": 5,
+      "image" :"" ,
+      "nom": "Sweat à capuche",
+      "categorie": "Vêtements",
+      "description": "Sweat chaud avec capuche",
+      "prix_mad": 179.00,
+      "stock": 40,
+      "marque": "StreetWear"
+    },
+    {
+      "id": 6,
+      "image" :"" ,
+      "nom": "Chemise classique",
+      "categorie": "Vêtements",
+      "description": "Chemise à manches longues",
+      "prix_mad": 159.00,
+      "stock": 20,
+      "marque": "ElegantFit"
+    },
+    {
+      "id": 7,
+      "image" :"" ,
+      "nom": "Pantalon chino",
+      "categorie": "Vêtements",
+      "description": "Pantalon décontracté pour homme",
+      "prix_mad": 219.00,
+      "stock": 18,
+      "marque": "UrbanStyle"
+    },
+    {
+      "id": 8,
+      "image" :"" ,
+      "nom": "Baskets sport",
+      "categorie": "Vêtements",
+      "description": "Chaussures polyvalentes pour le sport",
+      "prix_mad": 349.00,
+      "stock": 22,
+      "marque": "RunFlex"
+    },
+    {
+      "id": 9,
+      "image" :"" ,
+      "nom": "Écharpe en laine",
+      "categorie": "Vêtements",
+      "description": "Écharpe douce pour l'hiver",
+      "prix_mad": 89.00,
+      "stock": 35,
+      "marque": "WarmTouch"
+    },
+    {
+      "id": 10,
+      "image" :"" ,
+      "nom": "Casquette ajustable",
+      "categorie": "Vêtements",
+      "description": "Casquette avec fermeture réglable",
+      "prix_mad": 79.00,
+      "stock": 45,
+      "marque": "CapStyle"
+    },
+    {
+      "id": 11,
+      "image" :"" ,
+      "nom": "Smartphone",
+      "categorie": "Électronique",
+      "description": "Smartphone avec écran haute résolution",
+      "prix_mad": 2999.00,
+      "stock": 12,
+      "marque": "NovaTech"
+    },
+    {
+      "id": 12,
+      "image" :"" ,
+      "nom": "Ordinateur portable",
+      "categorie": "Électronique",
+      "description": "Ordinateur portable pour travail et études",
+      "prix_mad": 6499.00,
+      "stock": 8,
+      "marque": "TechBook"
+    },
+    {
+      "id": 13,
+      "image" :"" ,
+      "nom": "Casque Bluetooth",
+      "categorie": "Électronique",
+      "description": "Casque sans fil avec réduction de bruit",
+      "prix_mad": 599.00,
+      "stock": 25,
+      "marque": "SoundMax"
+    },
+    {
+      "id": 14,
+      "image" :"" ,
+      "nom": "Écouteurs sans fil",
+      "categorie": "Électronique",
+      "description": "Écouteurs compacts avec boîtier de recharge",
+      "prix_mad": 299.00,
+      "stock": 40,
+      "marque": "AudioGo"
+    },
+    {
+      "id": 15,
+      "image" :"" ,
+      "nom": "Tablette numérique",
+      "categorie": "Électronique",
+      "description": "Tablette tactile pour lecture et multimédia",
+      "prix_mad": 1899.00,
+      "stock": 10,
+      "marque": "NovaTech"
+    }
+  ]

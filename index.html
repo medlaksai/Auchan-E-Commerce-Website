@@ -1,13 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
     <title>Auchan E-commerce Website</title>
 </head>
-<body>
- <script type="module" src="js/main.js"></script>   
+<body class="">
+   
+    <header class=" border-b border-stone-300 ">
+         <nav class="px-4 py-4 md:px-8">
+        <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+
+            <a href="index.html" class="text-black text-center font-bold text-2xl text-white shrink-0">Auchan</a>
+             <div class="w-full md:max-w-md lg:max-w-xl">
+                <input type="search" name="" id="" placeholder="Search for a product" class="w-full border border-white bg-white focus:ring-2 focus:ring-greeen-500 rounded-xl w-full h-10 text-start ">
+             </div>
+
+                <div class="flex items-center self-end md:self-auto shrink-0 ">
+            <span class="inline-flex">
+            <i class=""> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-basket preview-icon"><path d="m15 11-1 9"/><path d="m19 11-4-7"/><path d="M2 11h20"/><path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4"/><path d="M4.5 15.5h15"/><path d="m5 11 4-7"/><path d="m9 11 1 9"/></svg>
+        </i>
+        </span>
+        <span id="showingPrice" class="font-bold text-white px-2">0 DH</span>   
+        </div>
+   </div>
+       </nav>
+    </header>
+<main>
+     <div class="py-4 px-4 flex gap-2">
+    <aside class="flex flex-col  gap-3 p-4 bg-white border border-stone-300 rounded-xl w-48 shrink-0 items-start">
+        <span class="font-bold py-2">Tous les categories</span>
+       <button class="hover:text-red-500">Vêtements</button>
+       <button class="hover:text-red-500">Électronique</button>
+       <button class="hover:text-red-500">Maison et cuisine </button>
+       <button class="hover:text-red-500">Alimentation</button>
+       <button class="hover:text-red-500">Beauté et hygiène</button>
+    </aside>
+ 
+
+   <section class="product-Catalog w-full  px-4 py-4 font-bold">
+    <div class="catalog-Header"> 
+        <div>
+            <h3> Tout les Produits</h3>
+            <p></p>
+        </div>
+        <div>
+            <button></button>
+            <button></button>
+        </div>
+    </div>
+    <div id="product-container" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+        <article class="overflow-hidden p-3 bg-white border border-stone-300 rounded-xl shadow">
+            <img src="assets/pictures/laptop1.webp" alt="">
+            <span>Électronique</span>
+            <p class="font-thin">Ordinateur portable HP</p>
+            <span class="font-bold">3500 DH</span>    
+        </article>
+    </div>
+   </section>
+   </div>
+</main>
+ <script type="module" src="./js/main.js"></script>   
 </body>
 </html>
