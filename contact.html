@@ -42,8 +42,8 @@
         </nav>
         <div class="flex flex-wrap gap-6 mb-2 text-sm font-medium place-content-center">
                     <a href="index.html" class="hover:text-red-800 hover:underline">Home</a>
-                    <a href="#" class="hover:text-red-800 hover:underline">Admin</a>
-                    <a href="#" class="hover:text-red-800 hover:underline">Contact</a>
+                    <a href="admin.html" class="hover:text-red-800 hover:underline">Admin</a>
+                    <a href="contact.html" class="hover:text-red-800 hover:underline">Contact</a>
                 </div>
                 <div id="show-cart"></div>
                 <aside id="cart-area">
@@ -52,6 +52,31 @@
                 </aside>
     </header>
     
+    <main class="max-auto p-6 m-20">
+        <section class="bg-white max-w max-auto p-6 rounded-xl shadow">
+            <h2 class="text-3xl font-bold mb-6">Contactez - Nous </h2>
+            <form id="contactForm" class="space-y-4">
+                <div>
+                    <label for="" class="">Nom</label>
+                    <input type="text" class="border p-3 rounded w-full">
+                </div>
+                <div>
+                    <label for="">Email</label>
+                    <input type="email" class="border p-3 rounded w-full">
+                </div>
+                <div>
+                    <label for="">Telephone</label>
+                    <input type="number" class="border p-3 rounded w-full">
+                </div>
+                <div>
+                    <label for="">Message</label>
+                    <textarea name="" id="" class="border p-3 rounded w-full resize-none"></textarea>
+                </div>
+                <button id="submitMessageBtn" class="bg-red-600 text-white p-3 rounded w-full hover:bg-red-800 cursor-pointer">Envoyer</button>
+            </form>
+        </section>
+    </main>
+    <script type="module" src="./js/main.js"></script>
 </body>
 <footer class="bg-white w-full flex flex-col items-center justify-center px-4 py-5">
     <div class="">

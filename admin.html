@@ -9,7 +9,50 @@
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
     <title>Admin Panel</title>
 </head>
+<body>
+    <header class=" border-b border-stone-300 ">
+        <nav class="px-4 py-4 md:px-8">
+            <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 
+                <a href="index.html" class="text-black text-center font-bold text-2xl text-black shrink-0"> <img
+                        src="https://www.auchan.fr/xch/v8/content-renderer/sav_20261005-01/images/auchan-logo-desktop.svg"
+                        alt=""></a>
+                <div class="w-full md:max-w-md lg:max-w-xl">
+                    <input type="search" name="" id="" placeholder="Search for a product"
+                        class="w-full border border-stone-300 bg-white focus:ring-2 focus:ring-greeen-500 rounded-xl w-full h-10 text-start ">
+                </div>
+                <div class="flex items-center self-end md:self-auto shrink-0 ">
+                    <button id="cart-btn" class="initial-flex items-center" aria-label="Open cart">
+                        <span class="rounded-xl border border-transparent hover:bg-blue-100 hover:border-blue-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-shopping-basket preview-icon">
+                                <path d="m15 11-1 9" />
+                                <path d="m19 11-4-7" />
+                                <path d="M2 11h20" />
+                                <path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4" />
+                                <path d="M4.5 15.5h15" />
+                                <path d="m5 11 4-7" />
+                                <path d="m9 11 1 9" />
+                            </svg>
+                        </span>
+                        <span id="showingPrice" class="font-bold text-black px-2"></span>
+                    </button>
+                </div>
+        </nav>
+        <div class="flex flex-wrap gap-6 mb-2 text-sm font-medium place-content-center">
+                    <a href="index.html" class="hover:text-red-800 hover:underline">Home</a>
+                    <a href="admin.html" class="hover:text-red-800 hover:underline">Admin</a>
+                    <a href="contact.html" class="hover:text-red-800 hover:underline">Contact</a>
+                </div>
+                <div id="show-cart"></div>
+                <aside id="cart-area">
+                    <button id="close-cart"></button>
+                    <h2> Votre Cart</h2>
+                </aside>
+    </header>
+    
+</body>
 <footer class="bg-white w-full flex flex-col items-center justify-center px-4 py-5">
     <div class="">
         <span>All Rights Are Reserved</span>
