@@ -1,5 +1,5 @@
 import { products } from "./api.js"
-/*
+
 export function showProducts() {
     products()
         .then(product => {
@@ -19,7 +19,7 @@ export function showProducts() {
 
 }
 showProducts();  
-*/
+/*
 const cartBtn = document.getElementById("cart-btn");
 const  cartPanel = document.getElementById("cart-area");
 const  cartOverlay = document.getElementById("show-cart");
@@ -32,3 +32,4 @@ function toggleCart(open){
 cartBtn.addEventListener("click", () => toggleCart(true));
 cartClose.addEventListener("click", () => toggleCart(false));
 cartOverlay.addEventListener("click", () => toggleCart(false));
+*/
