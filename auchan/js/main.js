@@ -1,5 +1,5 @@
-import { showProducts } from "./products.js"; 
+import { activeFilter } from "./products.js"; 
 import { toggleCart } from "./cart.js"
-showProducts(); 
 
-toggleCart();
+activeFilter();
+toggleCart(); 

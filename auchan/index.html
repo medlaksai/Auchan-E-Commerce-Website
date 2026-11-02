@@ -53,43 +53,79 @@
                      
                     <h2 class="text-center font-bold rounded-xl bg-white shadow p-2"> Votre Cart </h2>
                     <div id="productsInCart" class="grid grid-cols-1 gap-2 p-2">
-                        <div class="grid grid-rows-3 bg-white shadow rounded-xl w-full p-2">
-                            <span> Image Here</span>
-                            <h2> Ttile of product</h2>
-                            <span> Total : 180DH</span>
-                        </div>
+                        
                     </div>
                 </aside>
     </header>
-        <main>
-        <div class="py-4 px-4 flex gap-2 ">
-            <section class="product-Catalog w-full  px-4 py-4 font-bold">
-                <div class="catalog-Header bg-white w-full p-2 mb-4 rounded-xl">
-                    <div class="m-2 flex flex-row-3 place-content-between">
-                        <div class="">
-                            <select name="" id="" class="border border-stone-300 rounded-xl p-1">
-                                <option value="Tous les categories">Tous les categories</option>
-                                <option value="Vêtements">Vêtements</option>
-                                <option value="Électronique">Électronique</option>
-                                <option value="Maison et cuisine">Maison et cuisine</option>
-                                <option value="Alimentation">Alimentation</option>
-                            </select>
-                        </div>
-                        <div class="space-x-4">
-                            <button id="gridView" class="hover:text-red-500 cursor-pointer">Grille</button>
-                            <button id="listView" class="hover:text-red-500 cursor-pointer">Liste</button>
-                        </div>
+     
+<main>
+    <div class="px-4 py-4 flex gap-2">
+        <section class="product-Catalog w-full px-4 py-4 font-bold">
+            <div class="catalog-Header bg-white w-full p-2 mb-4 rounded-xl shadow-sm">
+                <div class="m-2 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="categories flex flex-wrap items-center gap-2">
+                        <button data-category="Tout" class="bg-gray-200 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            Tout
+                        </button>
+                        <button data-category="Vêtements" class="px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+                            Vêtements
+                        </button>
+                        <button data-category="Électronique" class="px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+                            Électronique
+                        </button>
+                        <button data-category="Maison et cuisine" class="px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+                            Maison et cuisine
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-3 bg-gray-100 p-2 rounded-lg w-fit">
+                        <button
+                            id="gridView"
+                            class="hover:text-red-500 cursor-pointer transition"
+                            aria-label="Grid view">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24"
+                                viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="7" height="7" x="3" y="3" rx="1"/>
+                                <rect width="7" height="7" x="14" y="3" rx="1"/>
+                                <rect width="7" height="7" x="14" y="14" rx="1"/>
+                                <rect width="7" height="7" x="3" y="14" rx="1"/>
+                            </svg>
+                        </button>
+
+                        <button
+                            id="listView"
+                            class="hover:text-red-500 cursor-pointer transition"
+                            aria-label="List view">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24"
+                                viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 3v18"/>
+                                <rect width="18" height="18" x="3" y="3" rx="2"/>
+                                <path d="M3 9h18"/>
+                                <path d="M3 15h18"/>
+                            </svg>
+                        </button>
+
                     </div>
                 </div>
-                <div id="product-container" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+            </div>
+            <div id="product-container" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+            </div>
+            <div id="pagination" class="mt-6 flexx justify-center items-center gap-2"></div>
+            <div id="items" class="mt-4"></div>
 
-                </div>
+        </section>
+    </div>
+</main>
 
-                <div id="items" class=""></div>
-                <nav id="pagination" class=""></nav>
-            </section>
-        </div>
-    </main>
     <script type="module" src="./js/main.js"></script>
 </body>
 <footer class="bg-white w-full flex flex-col items-center justify-center px-4 py-5">
