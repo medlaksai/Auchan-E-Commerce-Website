@@ -71,6 +71,7 @@ export function updateCart(){
     </div>
     `;
 }
+
 document.getElementById("productsInCart").addEventListener("click", function(e){
     if(e.target.classList.contains("delete-Btn")){
         const id = Number(e.target.dataset.id);
@@ -81,5 +82,5 @@ document.getElementById("productsInCart").addEventListener("click", function(e){
     }
 })
 
-addToCart();
+addToCart(id);
 updateCart();

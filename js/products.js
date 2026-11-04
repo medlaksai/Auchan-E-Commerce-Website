@@ -4,7 +4,7 @@ import { products } from "./api.js";
 let currentFilter = "";
 let selectCategory = "Tout";
 let currentPage = 1;
-const productsPerPage = 8;
+const productsPerPage = 4;
 
 const filterInput = document.querySelector("#filter");
 
@@ -29,7 +29,8 @@ export function showProducts(data = myData) {
         `;
 
         card.classList.add("product-card", "p-3", "bg-white", "border", "border-stone-300", "rounded-xl", "shadow");
-        
+        card.draggable = "true";
+        card.dataset.id = element.id;
         container.append(card);
     });
 
@@ -83,4 +84,3 @@ document.querySelectorAll(".categories button").forEach(btn => {
     });
 });
 activeFilter();
-showProducts();
