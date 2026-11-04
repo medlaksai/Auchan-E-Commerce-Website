@@ -8,7 +8,7 @@ const productsPerPage = 8;
 
 const filterInput = document.querySelector("#filter");
 
-let myData = JSON.parse(localStorage.getItem("data")) || [];
+export let myData = JSON.parse(localStorage.getItem("data")) || [];
 
 export function showProducts(data = myData) {
     const container = document.getElementById("product-container");
@@ -34,68 +34,7 @@ export function showProducts(data = myData) {
     });
 
 }
-document.addEventListener("click" , function(e) {
-    if (e.target.classList.contains("add-to-cart")){
-        let id = Number(e.target.dataset.id);
-        addToCart(id);
-    }
-})
-export function addToCart(id){
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let item = myData.find(element => element.id === id );
-    if (!item) return;
 
-    let existingItem = cart.find(element => element.id === id);
-    if (existingItem){
-        existingItem.quantity++;
-    }else {
-        cart.push({...item, quantity : 1})
-    }
-    localStorage.setItem("cart" , JSON.stringify(cart));
-    updateCart();
-}
-export function updateCart(){
-    const cartContainer = document.getElementById("productsInCart");
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cartContainer.innerHTML = "";
-   
-    let total = 0;
-    cart.forEach(item => {
-        total += item.prix_mad * item.quantity
-        const div = document.createElement("div");
-        div.className = "flex items-center justify-between gap-3 border-b p-3";
-        div.innerHTML =`
-        <div class=" w-full">
-        <image class="w-25 h-25"src="${item.image}">
-        <h3 class="font-bold">${item.nom}</h3> 
-        <p>${item.prix_mad} DH</p>
-        <p>${item.quantity}</p>
-        <button data-id="${item.id}" class="delete-Btn bg-black text-white p-1 rounded-l">retirer</button>
-        </div>
-        `
-        cartContainer.append(div);
-    });
-    cartContainer.addEventListener("click" , function(e) {
-        if(e.target.classList.contains("delete-Btn")){
-            e.target.closest(".cart.item").remove();
-        }
-    })
-    cartContainer.innerHTML += `
-    <div  class="flex justify-between font-bold p-3">
-    <span>Total : </span>
-    <span>${total} DH</span>
-    </div>
-    `;
-}
-document.getElementById("productsInCart").addEventListener("click", function(e){
-    if(e.target.classList.contains("delete-Btn")){
-        const id = Number(e.target.dataset.id);
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cart = cart.filter(item => item.id !== id);
-        localStorage.setItem("cart" , JSON.stringify(cart));
-        updateCart();
-    }
-})
 
 export function activeFilter(){
     myData = JSON.parse(localStorage.getItem("data")) || []
@@ -143,6 +82,5 @@ document.querySelectorAll(".categories button").forEach(btn => {
         activeFilter();
     });
 });
-updateCart();
 activeFilter();
-products()
+showProducts();
