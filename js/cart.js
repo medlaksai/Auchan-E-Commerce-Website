@@ -14,3 +14,4 @@ cartBtn.addEventListener("click", () => toggleCart(true));
 cartClose.addEventListener("click", () => toggleCart(false));
 cartOverlay.addEventListener("click", () => toggleCart(false));
     
+
