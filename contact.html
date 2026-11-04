@@ -18,10 +18,10 @@
                         src="https://www.auchan.fr/xch/v8/content-renderer/sav_20261005-01/images/auchan-logo-desktop.svg"
                         alt=""></a>
                 <div class="w-full md:max-w-md lg:max-w-xl">
-                    <input type="search" name="" id="" placeholder="Search for a product"
-                        class="w-full border border-stone-300 bg-white focus:ring-2 focus:ring-greeen-500 rounded-xl w-full h-10 text-start ">
+                    <input type="search" name="" id="filter" placeholder="Search for a product"
+                        class="w-full border border-stone-300 bg-white focus:ring-2 focus:ring-greeen-500 rounded-xl w-full h-10 text-start p-2 ">
                 </div>
-                <div class="flex items-center self-end md:self-auto shrink-0 ">
+                <div class="flex items-center self-end md:self-auto shrink-0 h-4">
                     <button id="cart-btn" class="initial-flex items-center" aria-label="Open cart">
                         <span class="rounded-xl border border-transparent hover:bg-blue-100 hover:border-blue-500">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -47,8 +47,12 @@
                 </div>
                 <div id="show-cart"></div>
                 <aside id="cart-area">
-                    <button id="close-cart"></button>
-                    <h2> Votre Cart</h2>
+                     <button id="close-cart" class="bg-black w-10 h-10 rounded-3xl text-white font-bold">X</button>
+                     
+                    <h2 class="text-center font-bold rounded-xl bg-white shadow p-2"> Votre Cart </h2>
+                    <div id="productsInCart" class="grid grid-cols-1 gap-2 p-2">
+                        
+                    </div>
                 </aside>
     </header>
     
