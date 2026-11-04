@@ -1,7 +1,7 @@
  [
     {
       "id": 1,
-      "image" :"" ,
+      "image" : "../assets/laptop1.webp" ,
       "nom": "T-shirt en coton",
       "categorie": "Vêtements",
       "description": "T-shirt confortable en coton",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "image" :"" ,
+      "image" : "" ,
       "nom": "Jean slim",
       "categorie": "Vêtements",
       "description": "Jean slim en denim bleu",
@@ -121,7 +121,7 @@
     },
     {
       "id": 13,
-      "image" :"" ,
+      "image" :"https://cdnblob.marjane.ma/images/pim/products/b0bf56df510b021540267707e8b7c3c3.webp" ,
       "nom": "Casque Bluetooth",
       "categorie": "Électronique",
       "description": "Casque sans fil avec réduction de bruit",
