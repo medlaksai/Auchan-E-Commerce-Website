@@ -61,21 +61,22 @@
             <h2 class="text-3xl font-bold mb-6">Contactez - Nous </h2>
             <form id="contactForm" class="space-y-4">
                 <div>
-                    <label for="" class="">Nom</label>
-                    <input type="text" class="border p-3 rounded w-full">
+                    <label for="contact-name">Nom</label>
+                    <input id="contact-name" type="text" class="border p-3 rounded w-full">
                 </div>
                 <div>
-                    <label for="">Email</label>
-                    <input type="email" class="border p-3 rounded w-full">
+                    <label for="contact-email">Email</label>
+                    <input id="contact-email" type="email" class="border p-3 rounded w-full">
                 </div>
                 <div>
-                    <label for="">Telephone</label>
-                    <input type="number" class="border p-3 rounded w-full">
+                    <label for="contact-phone">Telephone</label>
+                    <input id="contact-phone" type="tel" class="border p-3 rounded w-full">
                 </div>
                 <div>
-                    <label for="">Message</label>
-                    <textarea name="" id="" class="border p-3 rounded w-full resize-none"></textarea>
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" class="border p-3 rounded w-full resize-none"></textarea>
                 </div>
+                <button type="button" id="generateTestData" class="border border-red-600 text-red-600 p-3 rounded w-full hover:bg-red-50 cursor-pointer" >Generer des donnees de test </button>
                 <button id="submitMessageBtn" class="bg-red-600 text-white p-3 rounded w-full hover:bg-red-800 cursor-pointer">Envoyer</button>
             </form>
         </section>

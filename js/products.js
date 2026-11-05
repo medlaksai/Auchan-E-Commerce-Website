@@ -1,4 +1,3 @@
-
 import { products } from "./api.js";
 
 let currentFilter = "";
@@ -9,6 +8,7 @@ const productsPerPage = 4;
 const filterInput = document.querySelector("#filter");
 
 export let myData =  [];
+
 export function productss(){
     return fetch("./data/data.json")
     .then(response => response.json())
@@ -17,9 +17,10 @@ export function productss(){
         return data;
     })
 }
+
 export function showProducts(data = myData) {
     const container = document.getElementById("product-container");
-
+    if(!container) return ;
     container.innerHTML = "";
 
     data.forEach(element => {
@@ -34,17 +35,16 @@ export function showProducts(data = myData) {
                 Ajouter au panier
             </button>
         `;
-
         card.classList.add("product-card", "p-3", "bg-white", "border", "border-stone-300", "rounded-xl", "shadow");
         card.draggable = "true";
         card.dataset.id = element.id;
         container.append(card);
     });
-
 }
 
 
 export function activeFilter(){
+    if (!document.getElementById("prodct-container")) return;
     const filtredProducts = myData.filter(product => 
         product.nom.toLowerCase().includes(currentFilter) &&
         (selectCategory === "Tout" || product.categorie === selectCategory)
@@ -54,9 +54,9 @@ export function activeFilter(){
     const start = (currentPage - 1 ) * productsPerPage ;
     const pageProducts = filtredProducts.slice(start , start + productsPerPage);
     showProducts(pageProducts)
-    renderPagination(totalPages)
-    
+    renderPagination(totalPages) 
 }
+
 function renderPagination(totalPages) {
     const pagination = document.getElementById("pagination");
     pagination.innerHTML = "";
@@ -89,6 +89,7 @@ document.querySelectorAll(".categories button").forEach(btn => {
         activeFilter();
     });
 });
+
 productss().then(() => { 
 activeFilter();
 });

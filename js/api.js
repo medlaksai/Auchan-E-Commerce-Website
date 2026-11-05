@@ -7,3 +7,12 @@ export function products () {
         return data
     })
 }
+
+export function fetchRandomUser(){
+    return fetch("https://randomuser.me/api/?nat=fr&inc=name,email,cell")
+    .then(response => {
+        if (!response.ok) throw new Error("Api Indisponible")
+            return response.json();
+    })
+    .then(data => data.results[0]);
+}

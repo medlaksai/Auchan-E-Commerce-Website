@@ -42,6 +42,7 @@ export function addToCart(id){
 }
 export function updateCart(){
     const cartContainer = document.getElementById("productsInCart");
+    const totalPrice =document.getElementById("showingPrice");
     let cart = getData("cart") || [];
     cartContainer.innerHTML = "";
    
