@@ -1,7 +1,9 @@
+import {saveData} from "./storage.js"
 export function products () {
     return fetch ("./data/data.json")
     .then(response => response.json())
-    .then(data => {localStorage.setItem("data", JSON.stringify(data))
+    .then(data => {
+        saveData("data" ,data)
         return data
     })
 }

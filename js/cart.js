@@ -1,4 +1,5 @@
 import {myData} from "./products.js"
+import { getData , saveData } from "./storage.js";
 
 const cartBtn = document.getElementById("cart-btn");
 const  cartPanel = document.getElementById("cart-area");
@@ -23,9 +24,10 @@ document.addEventListener("click" , function(e) {
         let id = Number(e.target.dataset.id);
         addToCart(id);
     }
-})
+});
+updateCart();
 export function addToCart(id){
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cart = getData("cart") || [];
     let item = myData.find(element => element.id === id );
     if (!item) return;
 
@@ -35,12 +37,12 @@ export function addToCart(id){
     }else {
         cart.push({...item, quantity : 1})
     }
-    localStorage.setItem("cart" , JSON.stringify(cart));
+    saveData("cart" , cart)
     updateCart();
 }
 export function updateCart(){
     const cartContainer = document.getElementById("productsInCart");
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cart = getData("cart") || [];
     cartContainer.innerHTML = "";
    
     let total = 0;
@@ -59,11 +61,7 @@ export function updateCart(){
         `
         cartContainer.append(div);
     });
-    cartContainer.addEventListener("click" , function(e) {
-        if(e.target.classList.contains("delete-Btn")){
-            e.target.closest(".cart.item").remove();
-        }
-    })
+    
     cartContainer.innerHTML += `
     <div  class="flex justify-between font-bold p-3">
     <span>Total : </span>
@@ -75,12 +73,11 @@ export function updateCart(){
 document.getElementById("productsInCart").addEventListener("click", function(e){
     if(e.target.classList.contains("delete-Btn")){
         const id = Number(e.target.dataset.id);
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let cart = getData("cart") || [];
         cart = cart.filter(item => item.id !== id);
-        localStorage.setItem("cart" , JSON.stringify(cart));
+        saveData("cart" , cart)
         updateCart();
     }
 })
 
-addToCart(id);
 updateCart();

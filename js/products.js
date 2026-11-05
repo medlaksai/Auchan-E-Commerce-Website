@@ -8,8 +8,15 @@ const productsPerPage = 4;
 
 const filterInput = document.querySelector("#filter");
 
-export let myData = JSON.parse(localStorage.getItem("data")) || [];
-
+export let myData =  [];
+export function productss(){
+    return fetch("./data/data.json")
+    .then(response => response.json())
+    .then (data => {
+        myData = data;
+        return data;
+    })
+}
 export function showProducts(data = myData) {
     const container = document.getElementById("product-container");
 
@@ -38,7 +45,6 @@ export function showProducts(data = myData) {
 
 
 export function activeFilter(){
-    myData = JSON.parse(localStorage.getItem("data")) || []
     const filtredProducts = myData.filter(product => 
         product.nom.toLowerCase().includes(currentFilter) &&
         (selectCategory === "Tout" || product.categorie === selectCategory)
@@ -83,4 +89,6 @@ document.querySelectorAll(".categories button").forEach(btn => {
         activeFilter();
     });
 });
+productss().then(() => { 
 activeFilter();
+});

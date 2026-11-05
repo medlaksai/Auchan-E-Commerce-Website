@@ -1,7 +1,7 @@
  [
     {
       "id": 1,
-      "image" : "../assets/laptop1.webp" ,
+      "image" : "" ,
       "nom": "T-shirt en coton",
       "categorie": "Vêtements",
       "description": "T-shirt confortable en coton",
@@ -111,7 +111,7 @@
     },
     {
       "id": 12,
-      "image" :"" ,
+      "image" :"../assets/laptop1.webp" ,
       "nom": "Ordinateur portable",
       "categorie": "Électronique",
       "description": "Ordinateur portable pour travail et études",
