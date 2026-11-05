@@ -44,7 +44,7 @@ form.addEventListener("submit" , e => {
     .map(key => validateField(key , inputs[key].value))
     .filter(error => error !== "");
     result.textContent = errors.length ? errors.join(" | ") : "Message Envoye !"
-    if(errors.length === 0) form.requestFullscreen();
+    if(errors.length === 0) form.reset();
 })
 
 
