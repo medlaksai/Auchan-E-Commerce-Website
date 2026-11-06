@@ -44,7 +44,7 @@ export function showProducts(data = myData) {
 
 
 export function activeFilter(){
-    if (!document.getElementById("prodct-container")) return;
+    if (!document.getElementById("product-container")) return;
     const filtredProducts = myData.filter(product => 
         product.nom.toLowerCase().includes(currentFilter) &&
         (selectCategory === "Tout" || product.categorie === selectCategory)

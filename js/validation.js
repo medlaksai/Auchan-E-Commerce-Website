@@ -23,7 +23,7 @@ export function validateField(field , value){
         name : `${user.name.first} ${user.name.last}`,
         email : user.email ,
         phone : user.cell ,
-        messages : "Bonjour , message Ici "
+        message : "Bonjour , message Ici "
     }
  }
  const form = document.getElementById("contactForm");
