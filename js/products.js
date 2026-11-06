@@ -1,18 +1,26 @@
-
 import { products } from "./api.js";
 
 let currentFilter = "";
 let selectCategory = "Tout";
 let currentPage = 1;
-const productsPerPage = 8;
+const productsPerPage = 4;
 
 const filterInput = document.querySelector("#filter");
 
-let myData = JSON.parse(localStorage.getItem("data")) || [];
+export let myData =  [];
+
+export function productss(){
+    return fetch("./data/data.json")
+    .then(response => response.json())
+    .then (data => {
+        myData = data;
+        return data;
+    })
+}
 
 export function showProducts(data = myData) {
     const container = document.getElementById("product-container");
-
+    if(!container) return ;
     container.innerHTML = "";
 
     data.forEach(element => {
@@ -27,78 +35,16 @@ export function showProducts(data = myData) {
                 Ajouter au panier
             </button>
         `;
-
         card.classList.add("product-card", "p-3", "bg-white", "border", "border-stone-300", "rounded-xl", "shadow");
-        
+        card.draggable = "true";
+        card.dataset.id = element.id;
         container.append(card);
     });
+}
 
-}
-document.addEventListener("click" , function(e) {
-    if (e.target.classList.contains("add-to-cart")){
-        let id = Number(e.target.dataset.id);
-        addToCart(id);
-    }
-})
-export function addToCart(id){
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let item = myData.find(element => element.id === id );
-    if (!item) return;
-
-    let existingItem = cart.find(element => element.id === id);
-    if (existingItem){
-        existingItem.quantity++;
-    }else {
-        cart.push({...item, quantity : 1})
-    }
-    localStorage.setItem("cart" , JSON.stringify(cart));
-    updateCart();
-}
-export function updateCart(){
-    const cartContainer = document.getElementById("productsInCart");
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cartContainer.innerHTML = "";
-   
-    let total = 0;
-    cart.forEach(item => {
-        total += item.prix_mad * item.quantity
-        const div = document.createElement("div");
-        div.className = "flex items-center justify-between gap-3 border-b p-3";
-        div.innerHTML =`
-        <div class=" w-full">
-        <image class="w-25 h-25"src="${item.image}">
-        <h3 class="font-bold">${item.nom}</h3> 
-        <p>${item.prix_mad} DH</p>
-        <p>${item.quantity}</p>
-        <button data-id="${item.id}" class="delete-Btn bg-black text-white p-1 rounded-l">retirer</button>
-        </div>
-        `
-        cartContainer.append(div);
-    });
-    cartContainer.addEventListener("click" , function(e) {
-        if(e.target.classList.contains("delete-Btn")){
-            e.target.closest(".cart.item").remove();
-        }
-    })
-    cartContainer.innerHTML += `
-    <div  class="flex justify-between font-bold p-3">
-    <span>Total : </span>
-    <span>${total} DH</span>
-    </div>
-    `;
-}
-document.getElementById("productsInCart").addEventListener("click", function(e){
-    if(e.target.classList.contains("delete-Btn")){
-        const id = Number(e.target.dataset.id);
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cart = cart.filter(item => item.id !== id);
-        localStorage.setItem("cart" , JSON.stringify(cart));
-        updateCart();
-    }
-})
 
 export function activeFilter(){
-    myData = JSON.parse(localStorage.getItem("data")) || []
+    if (!document.getElementById("product-container")) return;
     const filtredProducts = myData.filter(product => 
         product.nom.toLowerCase().includes(currentFilter) &&
         (selectCategory === "Tout" || product.categorie === selectCategory)
@@ -108,9 +54,9 @@ export function activeFilter(){
     const start = (currentPage - 1 ) * productsPerPage ;
     const pageProducts = filtredProducts.slice(start , start + productsPerPage);
     showProducts(pageProducts)
-    renderPagination(totalPages)
-    
+    renderPagination(totalPages) 
 }
+
 function renderPagination(totalPages) {
     const pagination = document.getElementById("pagination");
     pagination.innerHTML = "";
@@ -143,6 +89,7 @@ document.querySelectorAll(".categories button").forEach(btn => {
         activeFilter();
     });
 });
-updateCart();
+
+productss().then(() => { 
 activeFilter();
-products()
+});
