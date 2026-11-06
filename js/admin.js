@@ -87,6 +87,31 @@ form.addEventListener("submit" , (e) => {
     form.reset();
 })
 
+tbody.addEventListener("click" , (e) => {
+    const btn = e.target.closest("button[data-action]");
+    if(!btn) return;
+    const id = btn.dataset.id;
+    if(btn.dataset.action === "delete"){
+        if(!confirm("Voulez-vous supprimer ce produit ?")) return;
+        allProducts = allProducts.filter(p => String(p.id) !==id);
+         saveProducts();
+         renderTable();
+    }
+    if(btn.dataset.action === "edit"){
+        const product = allProducts.find(p => String(p.id) === id);
+        if(!product) return; 
+
+        nameInput.value = product.nom ;
+        categoryInput.value = product.categorie ;
+        priceInput.value = product.prix_mad ;
+        imageInput.value = product.image ;
+
+        editingId = product.id;
+        submitBtn.textContent = "Mettre a jour";
+        form.scrollIntoView();
+        nameInput.focus();
+    }
+})
 
 
 filterInputs.addEventListener("input", renderTable);
