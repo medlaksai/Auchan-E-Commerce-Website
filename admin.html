@@ -60,14 +60,14 @@
         <h2 class="text-2xl font-bold mb-6"> Admin Panel </h2>
         <section class="bg-white p-6 rounded-xl shadow mb-4">
             <h3 class="text-xl font-bold mb-4"> Ajouter Des Produits</h3>
-            <form action="" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <form id="product-form"" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                    <label for="">Nom de produit</label>
-                    <input type="text" class="w-full border rounded p-1">
+                    <label for="p-name">Nom de produit</label>
+                    <input id="p-name" type="text" class="w-full border rounded p-1">
                 </div>
                 <div>
-                    <label for="">Categorie</label>
-                    <select name="" id="" class="w-full text-center border rounded p-1">
+                    <label for="p-category">Categorie</label>
+                    <select name="" id="p-category" class="w-full text-center border rounded p-1">
                         <option value="">Choisir une Categorie</option>
                         <option value="Vêtements">Vêtements</option>
                         <option value="Électronique">Électronique</option>
@@ -76,16 +76,16 @@
                     </select>
                 </div>
                 <div>
-                    <label for="">Prix en Dirham (DH)</label>
-                    <input type="text" name="" id="" class="w-full rounded border p-1 ">
+                    <label for="p-price">Prix en Dirham (DH)</label>
+                    <input id="p-price" type="text" name="" id="" class="w-full rounded border p-1 ">
                 </div>
                 <div>
-                    <label for="">Image</label>
-                    <input type="text" class="border rounded w-full p-1">
+                    <label for="p-image">Image</label>
+                    <input id="p-image" type="text" class="border rounded w-full p-1">
                 </div>
                 <div>
                     <label for="">Tailles</label>
-                    <select name="" id="" class="w-full border rounded p-1 text-center">
+                    <select name="" id="p-size" class="w-full border rounded p-1 text-center">
                         <option value="">Choisir une Taille</option>
                         <option value="">S</option>
                         <option value="">M</option>
@@ -94,7 +94,7 @@
                     </select>
                 </div>
                 <div class="flex items-end ">
-                    <button class="bg-red-600 text-white p-1 rounded w-full">
+                    <button id="submit-btn" class="bg-red-600 text-white p-1 rounded w-full">
                         Enregistrer
                     </button>
                 </div>
@@ -114,7 +114,7 @@
                             <th class="p-3 ">Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="products-body">
 
                     </tbody>
                 </table>
@@ -122,6 +122,7 @@
         </section>
     </main>
 <script type="module" src="./js/main.js" defer></script>
+<script type="module" src="./js/admin.js"></script>
 </body>
 <footer class="bg-white w-full flex flex-col items-center justify-center px-4 py-5">
     <div class="">
