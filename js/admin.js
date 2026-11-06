@@ -31,7 +31,7 @@ function renderTable(){
         </td>
         <td>${p.nom}</td>
         <td>${p.categorie}</td>
-        <td>${p.prix_mad}</td>
+        <td>${p.prix_mad} DH</td>
         <td>
         <button data-id="${p.id}" data-action="edit">Modifie</button>
         <button data-id="${p.id}" data-action="delete">Supprimer</button>
