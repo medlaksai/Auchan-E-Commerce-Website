@@ -16,6 +16,13 @@ let allProducts = [];
 let editingId = null ;
 
 const saveProducts = () => saveData("products" , allProducts);
+
+const patterns = {
+    nom: /^[\p{L}\p{N}][\p{L}\p{N}\s'’.,&()-]{1,59}$/u,
+    prix: /^\d+([.,]\d{1,2})?$/ ,
+    image: /^(https?:\/\/\S+|[\w./-]+\.(png|jpe?g|webp|gif|svg))$/i
+};
+
 function renderTable(){
     const search = filterInputs.value.trim().toLowerCase();
     const list = allProducts.filter(p => p.nom.toLowerCase().includes(search));
@@ -39,6 +46,48 @@ function renderTable(){
         </tr>
         `).join("")
 }
+function validateForm(){
+    const errors = [];
+    if (!patterns.nom.test(nameInput.value.trim())) {
+        errors.push("Nom Invalide")
+    }
+    if (!patterns.prix.test(priceInput.value.trim())) {
+        errors.push("prix Invalide")
+    }
+    if (!patterns.image.test(imageInput.value.trim())) {
+        errors.push("image Invalide")
+    }
+    if (!categoryInput.value) {
+        errors.push("Category Invalide")
+    }
+    return errors;
+}
+
+function nextId(){
+    const ids = allProducts.map(p => Number(p.id)).filter(Number.isFinite);
+    return ids.length ? Math.max(...ids) + 1 : 1 ;
+}
+form.addEventListener("submit" , (e) => {
+    e.preventDefault();
+    const errors = validateForm();
+    if (errors.length > 0){
+        alert(errors.join("\n"))
+        return;
+    }
+    const newProduct = {
+        id : nextId(),
+        nom : nameInput.value.trim() ,
+        categorie : categoryInput.value ,
+        prix_mad : Number(priceInput.value.trim().replace("," , ".")),
+        image : imageInput.value.trim()
+    };
+    allProducts.push(newProduct);
+    saveProducts();
+    renderTable();
+    form.reset();
+})
+
+
 
 filterInputs.addEventListener("input", renderTable);
 products().then(data => {
